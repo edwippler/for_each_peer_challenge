@@ -1,0 +1,12 @@
+td {
+  text-align: center;
+}
+
+button{
+  color: inherit;
+}
+
+button:hover{
+  background-color: #000000;
+  color: #dddddd;
+}
