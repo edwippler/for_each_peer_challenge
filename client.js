@@ -1,4 +1,4 @@
-var personArray = [{name: 'Fred', yearsOfExperience: 2}, {name: 'George', yearsOfExperience: 3}, {name: 'Betty', yearsOfExperience: 4}];
+var personArray = [{name: 'Fred', yearsOfExperience: 2}, {name: 'George', yearsOfExperience: '3'}, {name: 'Betty', yearsOfExperience: 4}];
 var combinedExperience = 0;
 
 $(document).ready(function(){
@@ -6,10 +6,10 @@ $(document).ready(function(){
     var name = employee.name;
     var years = employee.yearsOfExperience;
     $('#employeeTable').append('<tr>' +
-    '<td>' + name + '</td>'+
-    '<td>'+ years + '</td>'+
+    '<td>' + employee.name + '</td>'+
+    '<td>'+ employee.yearsOfExperience + '</td>'+
     '</tr>');
-    combinedExperience += years;
+    combinedExperience += Number(employee.yearsOfExperience);
     $('#totalYears').text(combinedExperience);
   })
 
@@ -23,13 +23,13 @@ $(document).ready(function(){
     });
     personArray.push(newEmployeeObject);
     // console.log(newEmployeeObject);
-    // console.log(personArray);
+    console.log(personArray);
     $('#employeeTable').append('<tr>' +
-    '<td>' + newEmployeeObject.newEmployeeName + '</td>'+
-    '<td>'+ newEmployeeObject.newEmployeeYearsOfExperience + '</td>'+
+    '<td>' + newEmployeeObject.name + '</td>'+
+    '<td>'+ newEmployeeObject.yearsOfExperience + '</td>'+
     '</tr>');
 
-    combinedExperience += Number(newEmployeeObject.newEmployeeYearsOfExperience);
+    combinedExperience += Number(newEmployeeObject.yearsOfExperience);
     $('#totalYears').text(combinedExperience);
 
     $('.entryFields').val('');
