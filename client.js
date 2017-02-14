@@ -2,6 +2,7 @@ var personArray = [{name: 'Fred', yearsOfExperience: 2}, {name: 'George', yearsO
 var combinedExperience = 0;
 
 $(document).ready(function(){
+  // this block handles any existing employees (if any)
   personArray.forEach(function(employee){
     var name = employee.name;
     var years = employee.yearsOfExperience;
@@ -12,7 +13,7 @@ $(document).ready(function(){
     combinedExperience += Number(employee.yearsOfExperience);
     $('#totalYears').text(combinedExperience);
   })
-
+// this block handles any dynamically added employees
   $('form').on('submit', function(event){
     event.preventDefault();
     var submissionArray = $(this).serializeArray();
